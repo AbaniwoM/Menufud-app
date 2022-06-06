@@ -25,7 +25,8 @@ export const Header = (props: IHeaderProps) => {
   const login = async () => {
     if(!user) {
     const {
-      user: {refreshToken, providerData},
+      // refreshToken
+      user: {providerData},
       } = await signInWithPopup(firebaseAuth, provider);
       dispatch({
       type : actionType.SET_USER,
