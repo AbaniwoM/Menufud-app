@@ -25,8 +25,7 @@ export const Header = (props: IHeaderProps) => {
   const login = async () => {
     if(!user) {
     const {
-      // refreshToken
-      user: {providerData},
+      user: {refreshToken, providerData},
       } = await signInWithPopup(firebaseAuth, provider);
       dispatch({
       type : actionType.SET_USER,
@@ -37,6 +36,16 @@ export const Header = (props: IHeaderProps) => {
     setIsMenu(!isMenu);
   }
   };
+
+  const logout = () => {
+    setIsMenu(false)
+    localStorage.clear()
+
+    dispatch({
+      type : actionType.SET_USER,
+      user : null
+    });
+  }
 
   return (
     <header className="fixed z-50 w-screen p-3 px-4 md:p-6 md:px-16">
@@ -104,7 +113,10 @@ export const Header = (props: IHeaderProps) => {
                     </p>
                   </Link>
                 )}
-                <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
+                <p
+                  className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base"
+                  onClick={logout}
+                >
                   Logout <MdLogout />
                 </p>
               </motion.div>
@@ -115,6 +127,13 @@ export const Header = (props: IHeaderProps) => {
 
       {/* mobile */}
       <div className="flex items-center justify-between md:hidden w-full h-full">
+        <div className="flex items-center justify-center relative">
+          <MdShoppingBasket className="text-textColor text-2xl cursor-pointer" />
+          <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
+            <p className="text-xs text-white font-semibold">2</p>
+          </div>
+        </div>
+
         <Link to={"/"} className="flex items-center gap-2">
           <motion.img
             whileTap={{ scale: 0.6 }}
@@ -124,6 +143,7 @@ export const Header = (props: IHeaderProps) => {
           />
           <p className="text-headingColor text-xl font-bold">Menufud</p>
         </Link>
+
         <div className="relative">
           <motion.img
             whileTap={{ scale: 0.6 }}
@@ -162,7 +182,10 @@ export const Header = (props: IHeaderProps) => {
                 </li>
               </ul>
 
-              <p className="px-4 py-2 flex items-center gap-3 cursor-pointer hover:bg-slate-100 transition-all duration-100 ease-in-out text-textColor text-base">
+              <p
+                className="m-2 p-2 rounded-md shadow-md flex items-center justify-center bg-gray-200 gap-3 cursor-pointer hover:bg-gray-300 transition-all duration-100 ease-in-out text-textColor text-base"
+                onClick={logout}
+              >
                 Logout <MdLogout />
               </p>
             </motion.div>
