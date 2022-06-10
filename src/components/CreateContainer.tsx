@@ -12,6 +12,9 @@ import { categories } from '../utils/data';
 import Loader from './Loader';
 import { storage } from '../firebase.config';
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import { getAllFoodItems, saveItem } from '../utils/firebaseFunctions';
+import { actionType } from '../context/reducer';
+import { useStateValue } from '../context/StateProvider';
 
 export interface ICreateContainerProps {
 }
@@ -27,6 +30,7 @@ export const CreateContainer = (props: ICreateContainerProps) => {
   const [alertStatus, setAlertStatus] = useState("danger");
   const [msg, setMsg] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [ dispatch] = useStateValue();
 
   const uploadImage = (e:any) => {
     setIsLoading(true);
@@ -77,7 +81,68 @@ export const CreateContainer = (props: ICreateContainerProps) => {
     })
   };
 
-  const saveDetails = () => {};
+  const saveDetails = () => {
+    setIsLoading(true);
+    try {
+      if((!title || !calories || !imageAsset || !category)) {
+        setFields(true);
+        setMsg("Required fields can't be empty" as any);
+        setAlertStatus("danger");
+        setTimeout(() => {
+          setFields(false);
+          setIsLoading(false);
+        }, 4000);
+      }else{
+        const data ={
+          id : `${Date.now()}`,
+          title : title,
+          imageURL : imageAsset,
+          category : category,
+          calories : calories,
+          qty : 1,
+          price : price
+        }
+        saveItem(data)
+        setIsLoading(false);
+        setFields(true);
+        setMsg("Image Uploaded successfully!" as any);
+        clearData();
+        setAlertStatus("success");
+        setTimeout(() => {
+          setFields(false);
+        }, 4000);
+      }
+    } catch (error) {
+      console.log(error);
+      setFields(true);
+      setMsg("Error while uploading : Try Again" as any);
+      setAlertStatus("danger");
+      setTimeout(() => {
+        setFields(false);
+        setIsLoading(false);
+      }, 4000);
+    }
+
+    fetchData();
+  };
+
+  const clearData = () => {
+    setTitle("");
+    setImageAsset(null);
+    setCalories("");
+    setPrice("");
+    setCategory("Select Category");
+  };
+
+  const fetchData: any = async () => {
+    await getAllFoodItems().then((data) => {
+      dispatch({
+        type: actionType.SET_FOOD_ITEMS,
+        foodItems: data,
+      });
+    });
+  };
+
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center">
