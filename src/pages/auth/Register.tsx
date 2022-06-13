@@ -89,7 +89,7 @@ const Register: React.FunctionComponent<IPageProps> = (props) => {
         color="success"
         block
         onClick={() => signUpWithEmailAndPassword()}
-        className="bg-gradient-to-br from-green-400 to-green-400 w-[100%] md:w-auto px-[138px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
+        className="bg-gradient-to-br from-green-400 to-green-400 w-[100%] md:w-auto px-[146px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
       >
         Sign Up
       </Button>

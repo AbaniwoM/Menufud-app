@@ -24,7 +24,7 @@ const Login: React.FunctionComponent<IPageProps> = (props) => {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         logging.info(result);
-        navigate("/");
+        navigate("/dashboard");
       })
       .catch((error) => {
         logging.error(error);
@@ -65,7 +65,7 @@ const Login: React.FunctionComponent<IPageProps> = (props) => {
         color="success"
         block
         onClick={() => signInWithEmailAndPassword()}
-        className="bg-gradient-to-br from-green-400 to-green-400 w-[100%] md:w-auto px-[148px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
+        className="bg-gradient-to-br from-green-400 to-green-400 w-[100%] md:w-auto px-[155px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
       >
         Login
       </Button>
