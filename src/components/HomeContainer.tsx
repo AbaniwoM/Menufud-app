@@ -1,6 +1,7 @@
 import React from 'react';
 import Delivery from "../images/delivery.png";
 import HeroBg from '../images/heroBg.png';
+import { Link } from "react-router-dom";
 import { heroData } from '../utils/data';
 
 export interface IHomeContainerProps {
@@ -12,8 +13,8 @@ export function HomeContainer (props: IHomeContainerProps) {
      className="lg:-mt-5 grid grid-cols-1 md:grid-cols-2 gap-2 w-full"
      id="home"
    >
-     <div className="py-2 lg:-mt-20 flex-1 flex flex-col items-start justify-center gap-6">
-       <div className="flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full">
+     <div className="py-2 lg:-mt-[200px] flex-1 flex flex-col items-start justify-center gap-6">
+       <div className="mt-[115px] flex items-center gap-2 justify-center bg-orange-100 px-4 py-1 rounded-full">
          <p className="text-base text-orange-500 font-semibold">
            Bike Delivery
          </p>
@@ -39,13 +40,14 @@ export function HomeContainer (props: IHomeContainerProps) {
          time without complaints or harm to goods. We are tested and trusted. We
          are Menufud! Welcome!
        </p>
-
-       <button
-         type="button"
-         className="bg-gradient-to-br from-orange-400 to-orange-500 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
-       >
-         Order Now
-       </button>
+       <Link to="/register">
+         <button
+           type="button"
+           className="bg-gradient-to-br from-orange-400 to-orange-500 w-full md:w-auto px-4 py-2 rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
+         >
+           Get Started
+         </button>
+       </Link>
      </div>
      <div className="py-2 flex-1 flex items-center relative">
        <img
@@ -61,7 +63,11 @@ export function HomeContainer (props: IHomeContainerProps) {
                key={n.id}
                className="lg:w-190 p-2 lg:p-4 bg-cardOverlay backdrop-blur-md rounded-3xl flex flex-col items-center justify-center drop-shadow-lg"
              >
-               <img src={n.imageSrc} className="w-20 lg:w-40 -mt-10 lg:-mt-20" alt="I1" />
+               <img
+                 src={n.imageSrc}
+                 className="w-20 lg:w-40 -mt-10 lg:-mt-20"
+                 alt="I1"
+               />
                <p className="text-base lg:text-xl font-semibold text-textColor mt-2 lg:mt-4">
                  {n.name}
                </p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import HomeContainer from './HomeContainer';
+// import HomeContainer from './HomeContainer';
 export interface IMainContainerProps {
 }
 
@@ -10,7 +11,7 @@ export function MainContainer (props: IMainContainerProps) {
 
       <section className="w-full">
         <div className="w-full flex items-center justify-between">
-          
+
         </div>
       </section>
     </div>
