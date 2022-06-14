@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { MdShoppingBasket } from "react-icons/md";
 
 // import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 // import { app } from "../firebase.config";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 import Logo from "../images/logo.png";
 // import Avatar from "../images/avatar.png";
 import { Link } from "react-router-dom";
 // import { useStateValue } from '../context/StateProvider';
 // import { actionType } from '../context/reducer';
 
-export interface IHeaderProps {
-}
+export interface IHeaderProps {}
 
 export const Header = (props: IHeaderProps) => {
   // const firebaseAuth = getAuth(app);
@@ -160,7 +159,7 @@ export const Header = (props: IHeaderProps) => {
       </div>
 
       {/* mobile */}
-      <div className="flex -mt-[95px] items-center justify-between md:hidden w-full h-[52vh]">
+      <div className="flex -mt-[95px] items-center justify-between md:hidden w-full h-[30vh]">
         <div className="flex items-center justify-center relative">
           <MdShoppingBasket className="text-textColor text-2xl cursor-pointer" />
           {/* <div className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-cartNumBg flex items-center justify-center">
@@ -189,7 +188,7 @@ export const Header = (props: IHeaderProps) => {
             initial={{ opacity: 0, scale: 0.6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.6 }}
-            className="w-[290px] h-[10vh] shadow-xl rounded-lg flex absolute top-12 right-0"
+            className="w-[310px] h-[6vh] shadow-xl rounded-lg flex absolute top-12 right-4"
           >
             {/* {user && user.email === "michaelabaniwo@gmail.com" && (
                 <Link to={"/createItem"}>
@@ -223,7 +222,7 @@ export const Header = (props: IHeaderProps) => {
                 Logout <MdLogout />
               </p> */}
           </motion.div>
-          <Link to="/register" className="absolute mt-[110px] right-[175px]">
+          <Link to="/register" className="absolute mt-[110px] right-[210px]">
             <button
               type="button"
               className="bg-gradient-to-br from-orange-300 to-orange-400 w-full md:w-auto px-4 py-2 text-[0.9rem] rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"
@@ -231,7 +230,7 @@ export const Header = (props: IHeaderProps) => {
               Register
             </button>
           </Link>
-          <Link to="/login" className="absolute mt-[110px] right-[30px]">
+          <Link to="/login" className="absolute mt-[110px] right-[35px]">
             <button
               type="button"
               className="bg-gradient-to-br from-orange-300 to-orange-400 w-full md:w-auto px-7 py-2 text-[0.9rem] rounded-lg hover:shadow-lg transition-all ease-in-out duration-100"

@@ -16,7 +16,7 @@ export function Dashboard (props: IDashboardProps) {
           </div>
           <div>delivered to you in good time! You can't stop at one!</div>
         </div>
-        <div className="lg:w-[10%] w-[17%] ml-[100px] lg:ml-[800px] -mt-[178px] absolute lg:-mt-[43px]">
+        <div className="lg:w-[10%] w-[17%] ml-[110px] lg:ml-[800px] -mt-[178px] absolute lg:-mt-[43px]">
           <img src={Image} alt="welcome" />
         </div>
       </div>
