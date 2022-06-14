@@ -9,7 +9,11 @@ const ErrorText: React.FunctionComponent<IErrorTextProps> = props => {
 
   if (error === '') return null;
 
-  return <small className="text-red-400 relative">{error}</small>;
-}
+  return (
+    <small className="text-red-400 text-[0.6rem] lg:text-[0.85rem] -ml-1 lg:ml-10 relative">
+      {error}
+    </small>
+  );
+};
 
 export default ErrorText;

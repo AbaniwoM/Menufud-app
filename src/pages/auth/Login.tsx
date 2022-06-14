@@ -65,19 +65,22 @@ const Login: React.FunctionComponent<IPageProps> = (props) => {
         color="success"
         block
         onClick={() => signInWithEmailAndPassword()}
-        className="bg-gradient-to-br from-green-400 to-green-400 w-[100%] md:w-auto px-[155px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
+        className="bg-gradient-to-br from-green-400 to-green-400 w-[95%] lg:w-[95%] md:w-auto px-[40px] lg:px-[146px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
       >
         Login
       </Button>
       <small>
-        <p className="m-2 text-center">
+        <p className="text-[0.7rem] lg:text-[0.9rem] mt-2 -ml-2 lg:-ml-1 text-center text-white">
           Don't have an account?{" "}
           <Link to="/register" className="text-green-500">
             Register here.
           </Link>
         </p>
         <p className="m-1 text-center">
-          <Link to="/forget" className="text-green-500">
+          <Link
+            to="/forget"
+            className="text-green-500 text-[0.7rem] lg:text-[0.9rem]"
+          >
             Forgot your password?
           </Link>
         </p>

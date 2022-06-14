@@ -48,61 +48,63 @@ const Register: React.FunctionComponent<IPageProps> = (props) => {
   };
 
   return (
-    <AuthContainer header="Register">
-      <FormGroup className="xs:block xs:-ml-10">
-        <Input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="Email Address"
-          onChange={(event) => setEmail(event.target.value)}
-          value={email}
-          className="h-[6vh] p-3 w-[95%] rounded-md"
-        />
-      </FormGroup>
-      <FormGroup className="mt-3">
-        <Input
-          autoComplete="new-password"
-          type="password"
-          name="password"
-          id="password"
-          placeholder="Enter Password"
-          onChange={(event) => setPassword(event.target.value)}
-          value={password}
-          className="h-[6vh] p-3 w-[95%] rounded-md"
-        />
-      </FormGroup>
-      <FormGroup className="mt-3">
-        <Input
-          autoComplete="new-password"
-          type="password"
-          name="confirm"
-          id="confirm"
-          placeholder="Confirm Password"
-          onChange={(event) => setConfirm(event.target.value)}
-          value={confirm}
-          className="h-[6vh] p-3 w-[95%] rounded-md"
-        />
-      </FormGroup>
-      <Button
-        disabled={registering}
-        color="success"
-        block
-        onClick={() => signUpWithEmailAndPassword()}
-        className="bg-gradient-to-br from-green-400 to-green-400 w-[100%] md:w-auto px-[146px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
-      >
-        Sign Up
-      </Button>
-      <small>
-        <p className="mt-2 -ml-1 text-center text-white">
-          Already have an account?{" "}
-          <Link to="/login" className="text-green-500">
-            Login.
-          </Link>
-        </p>
-      </small>
-      <ErrorText error={error} />
-    </AuthContainer>
+    <div className="bg-primary">
+      <AuthContainer header="Register">
+        <FormGroup className="xs:block xs:-ml-10">
+          <Input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email Address"
+            onChange={(event) => setEmail(event.target.value)}
+            value={email}
+            className="h-[6vh] p-3 w-[95%] rounded-md"
+          />
+        </FormGroup>
+        <FormGroup className="mt-3">
+          <Input
+            autoComplete="new-password"
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Enter Password"
+            onChange={(event) => setPassword(event.target.value)}
+            value={password}
+            className="h-[6vh] p-3 w-[95%] rounded-md"
+          />
+        </FormGroup>
+        <FormGroup className="mt-3">
+          <Input
+            autoComplete="new-password"
+            type="password"
+            name="confirm"
+            id="confirm"
+            placeholder="Confirm Password"
+            onChange={(event) => setConfirm(event.target.value)}
+            value={confirm}
+            className="h-[6vh] p-3 w-[95%] rounded-md"
+          />
+        </FormGroup>
+        <Button
+          disabled={registering}
+          color="success"
+          block
+          onClick={() => signUpWithEmailAndPassword()}
+          className="bg-gradient-to-br from-green-400 to-green-400 w-[95%] lg:w-[95%] md:w-auto px-[40px] lg:px-[146px] py-1.5 mt-3 rounded-md hover:shadow-lg transition-all ease-in-out duration-100"
+        >
+          Sign Up
+        </Button>
+        <small>
+          <p className="text-[0.7rem] lg:text-[0.9rem] mt-2 -ml-2 lg:-ml-1 text-center text-white">
+            Already have an account?
+            <Link to="/login" className="text-green-500 ml-1">
+              Login.
+            </Link>
+          </p>
+        </small>
+        <ErrorText error={error} />
+      </AuthContainer>
+    </div>
   );
 };
 
