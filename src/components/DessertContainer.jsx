@@ -1,13 +1,13 @@
-import React from 'react';
-import Pine from "../images/f2.png";
-import Straw from "../images/f1.png";
-import Banna from "../images/f9.png";
-import Melon from "../images/f10.png";
-import Apple from "../images/f8.png";
-import { MdShoppingBasket } from 'react-icons/md';
-import { motion } from 'framer-motion';
+import React from "react";
+import Chocoval from "../images/i1.png";
+import Val from "../images/i6.png";
+import Strawb from "../images/i5.png";
+import Chocolay from "../images/i2.png";
+import Mixed from "../images/i4.png";
+import { MdShoppingBasket } from "react-icons/md";
+import { motion } from "framer-motion";
 
-const RowContainer = ({flag}) => {
+const DessertContainer = ({ flag }) => {
   return (
     <div
       className={`w-full flex gap-3 my-12 ${
@@ -18,7 +18,7 @@ const RowContainer = ({flag}) => {
         <div className="w-full flex items-center justify-between">
           <motion.img
             whileHover={{ scale: 1.2 }}
-            src={Pine}
+            src={Chocoval}
             alt="pineapple"
             className="w-40 -mt-8 drop-shadow-2xl"
           />
@@ -31,7 +31,7 @@ const RowContainer = ({flag}) => {
         </div>
         <div className="w-full flex flex-col gap-4 items-end justify-end">
           <p className="text-textColor font-semibold text-base md:text-lg">
-            Pineapples
+            Chocolate Vanilla Ice cream
           </p>
           {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
           <div className="flex items-center gap-8">
@@ -45,9 +45,9 @@ const RowContainer = ({flag}) => {
         <div className="w-full flex items-center justify-between">
           <motion.img
             whileHover={{ scale: 1.2 }}
-            src={Straw}
-            alt="strawberry"
-            className="w-40 -mt-8 drop-shadow-2xl"
+            src={Val}
+            alt="vanilla"
+            className="w-40 -mt-4 drop-shadow-2xl"
           />
           <motion.div
             whileTap={{ scale: 0.75 }}
@@ -58,7 +58,7 @@ const RowContainer = ({flag}) => {
         </div>
         <div className="w-full flex flex-col gap-4 items-end justify-end">
           <p className="text-textColor font-semibold text-base md:text-lg">
-            Strawberries
+            Vanilla Ice cream
           </p>
           {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
           <div className="flex items-center gap-8">
@@ -72,9 +72,9 @@ const RowContainer = ({flag}) => {
         <div className="w-full flex items-center justify-between">
           <motion.img
             whileHover={{ scale: 1.2 }}
-            src={Banna}
-            alt="bananna"
-            className="w-40 -mt-3 drop-shadow-2xl"
+            src={Strawb}
+            alt="strawberry"
+            className="w-40 -mt-5 drop-shadow-2xl"
           />
           <motion.div
             whileTap={{ scale: 0.75 }}
@@ -85,7 +85,7 @@ const RowContainer = ({flag}) => {
         </div>
         <div className="w-full mt-[8px] flex flex-col gap-4 items-end justify-end">
           <p className="text-textColor font-semibold text-base md:text-lg">
-            Banannas
+            Strawberry Ice cream
           </p>
           {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
           <div className="flex items-center gap-8">
@@ -99,9 +99,9 @@ const RowContainer = ({flag}) => {
         <div className="w-full flex items-center justify-between">
           <motion.img
             whileHover={{ scale: 1.2 }}
-            src={Melon}
-            alt="watermelon"
-            className="w-40 -mt-4 drop-shadow-2xl"
+            src={Chocolay}
+            alt="chocolate-layered"
+            className="lg:w-[24%] w-[24%] -mt-4 drop-shadow-2xl"
           />
           <motion.div
             whileTap={{ scale: 0.75 }}
@@ -110,9 +110,9 @@ const RowContainer = ({flag}) => {
             <MdShoppingBasket className="text-white text-[1rem]" />
           </motion.div>
         </div>
-        <div className="w-full -mt-2 flex flex-col gap-4 items-end justify-end">
+        <div className="w-full lg:-mt-2 mt-3 flex flex-col gap-4 items-end justify-end">
           <p className="text-textColor font-semibold text-base md:text-lg">
-            Water Melon
+            Chocolate-layered Ice cream
           </p>
           {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
           <div className="flex items-center gap-8">
@@ -126,9 +126,9 @@ const RowContainer = ({flag}) => {
         <div className="w-full flex items-center justify-between">
           <motion.img
             whileHover={{ scale: 1.2 }}
-            src={Apple}
-            alt="apple"
-            className="w-40 -mt-3 drop-shadow-2xl"
+            src={Mixed}
+            alt="mixed-flavoured"
+            className="w-[47%] -mt-7 drop-shadow-2xl"
           />
           <motion.div
             whileTap={{ scale: 0.75 }}
@@ -137,9 +137,9 @@ const RowContainer = ({flag}) => {
             <MdShoppingBasket className="text-white text-[1rem]" />
           </motion.div>
         </div>
-        <div className="w-full -mt-5 flex flex-col gap-4 items-end justify-end">
+        <div className="w-full lg:-mt-[2px] mt-[18px] flex flex-col gap-4 items-end justify-end">
           <p className="text-textColor font-semibold text-base md:text-lg">
-            Apples
+            Mixed Flavoured Ice cream
           </p>
           {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
           <div className="flex items-center gap-8">
@@ -151,6 +151,6 @@ const RowContainer = ({flag}) => {
       </div>
     </div>
   );
-}
+};
 
-export default RowContainer
+export default DessertContainer;
