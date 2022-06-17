@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Chocoval from "../images/i1.png";
 import Val from "../images/i6.png";
 import Strawb from "../images/i5.png";
@@ -7,10 +7,17 @@ import Mixed from "../images/i4.png";
 import { MdShoppingBasket } from "react-icons/md";
 import { motion } from "framer-motion";
 
-const DessertContainer = ({ flag }) => {
+const DessertContainer = ({ flag, scrollValue }) => {
+  const rowContainer = useRef();
+
+  useEffect(() => {
+    rowContainer.current.scrollLeft += scrollValue;
+  }, [scrollValue]);
+
   return (
     <div
-      className={`w-full flex gap-3 my-12 ${
+      ref={rowContainer}
+      className={`w-full flex gap-3 my-12 scroll-smooth ${
         flag ? "overflow-x-scroll scrollbar-none" : "overflow-x-hidden"
       }`}
     >

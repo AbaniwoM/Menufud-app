@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import Pine from "../images/f2.png";
 import Straw from "../images/f1.png";
 import Banna from "../images/f9.png";
@@ -7,10 +7,17 @@ import Apple from "../images/f8.png";
 import { MdShoppingBasket } from 'react-icons/md';
 import { motion } from 'framer-motion';
 
-const RowContainer = ({flag}) => {
+const RowContainer = ({flag, scrollValue}) => {
+  const rowContainer = useRef();
+
+  useEffect(() => {
+    rowContainer.current.scrollLeft += scrollValue;
+  }, [scrollValue]);
+
   return (
     <div
-      className={`w-full flex gap-3 my-12 ${
+      ref={rowContainer}
+      className={`w-full flex gap-3 my-12 scroll-smooth ${
         flag ? "overflow-x-scroll scrollbar-none" : "overflow-x-hidden"
       }`}
     >
