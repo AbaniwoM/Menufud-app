@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { IoFastFood }  from "react-icons/io5";
-import {
-  makeStyles,
-  Modal,
-} from "@material-ui/core";
+import { IoFastFood } from "react-icons/io5";
+import { makeStyles, Modal } from "@material-ui/core";
 import { MdShoppingBasket } from "react-icons/md";
-import Chi from "../images/r2.png";
-import PotaChi from "../images/r1.png";
-import RoastChi from "../images/r4.png";
-import RedChi from "../images/r3.png";
+import Gum from "../images/gumbo_fried_rice.jpg";
+import Hok from "../images/hokkien_fried_rice.jpg";
+import Hop from "../images/hoppin_john_rice.jpg";
+import Loc from "../images/loco_moco_rice.jpg";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -53,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const CurryContainer = () => {
+const RiceContainer = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   return (
@@ -66,7 +63,7 @@ const CurryContainer = () => {
         <div className="w-10 h-10 rounded-full shadow-lg bg-cartNumBg group-hover:bg-white flex items-center justify-center">
           <IoFastFood className="text-card group-hover:text-textColor text-lg" />
         </div>
-        <p className="text-sm text-textColor group-hover:text-white">Curry</p>
+        <p className="text-sm text-textColor group-hover:text-white">Rice</p>
       </motion.div>
       <Modal open={open}>
         <div className={classes.container}>
@@ -75,7 +72,7 @@ const CurryContainer = () => {
           </div>
           <div className="ml-6">
             <p className="text-md font-semibold capitalize text-headingColor lg:relative z-50 w-screen -mt-1 lg:-mt-0 fixed before:absolute before:rounded-lg before:content before:w-[6%] before:h-1 before:-bottom-2 before:left-0 before:bg-gradient-to-tr from-orange-400 to-orange-600 transition-all ease-in-out duration-100">
-              Curry Dishes
+              Rice Dishes
             </p>
           </div>
           <div className="lg:flex lg:gap-10 -ml-[22px] lg:ml-[43px]">
@@ -83,8 +80,8 @@ const CurryContainer = () => {
               <div className="w-full flex items-center justify-between">
                 <motion.img
                   whileHover={{ scale: 1.2 }}
-                  src={Chi}
-                  alt="yellow-chicken-rise"
+                  src={Gum}
+                  alt="gumbo-fried-rice"
                   className="lg:w-[31%] w-[40%] -mt-8 drop-shadow-2xl"
                 />
                 <motion.div
@@ -96,12 +93,12 @@ const CurryContainer = () => {
               </div>
               <div className="w-full mt-3 lg:mt-0 flex flex-col gap-4 items-end justify-end">
                 <p className="text-textColor font-semibold lg:text-base text-sm md:text-lg">
-                  Yellow Chicken and Rice
+                  Gumbo Fried Rice
                 </p>
                 {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
                 <div className="flex items-center gap-8">
                   <p className="lg:text-lg text-sm text-headingColor font-semibold">
-                    <span className="text-sm text-red-500">$</span> 2.25
+                    <span className="text-sm text-red-500">$</span> 4.25
                   </p>
                 </div>
               </div>
@@ -110,8 +107,8 @@ const CurryContainer = () => {
               <div className="w-full flex items-center justify-between">
                 <motion.img
                   whileHover={{ scale: 1.2 }}
-                  src={PotaChi}
-                  alt="spicy-chicken-rice"
+                  src={Hok}
+                  alt="hokkien-fried-rice"
                   className="lg:w-[31%] w-[40%] -mt-8 drop-shadow-2xl"
                 />
                 <motion.div
@@ -123,12 +120,12 @@ const CurryContainer = () => {
               </div>
               <div className="w-full mt-2 lg:mt-0 flex flex-col gap-4 items-end justify-end">
                 <p className="text-textColor font-semibold lg:text-base text-sm md:text-lg">
-                  Spicy Chicken and Rice
+                  Hokkien Fried Rice
                 </p>
                 {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
                 <div className="flex items-center gap-8">
                   <p className="lg:text-lg text-sm text-headingColor font-semibold">
-                    <span className="text-sm text-red-500">$</span> 5.25
+                    <span className="text-sm text-red-500">$</span> 3.25
                   </p>
                 </div>
               </div>
@@ -139,8 +136,8 @@ const CurryContainer = () => {
               <div className="w-full flex items-center justify-between">
                 <motion.img
                   whileHover={{ scale: 1.2 }}
-                  src={RoastChi}
-                  alt="easy-mexican-rice"
+                  src={Hop}
+                  alt="hoppin-john-rice"
                   className="w-[37%] -mt-8 drop-shadow-2xl"
                 />
                 <motion.div
@@ -152,12 +149,12 @@ const CurryContainer = () => {
               </div>
               <div className="w-full mt-2 lg:mt-3 flex flex-col gap-4 items-end justify-end">
                 <p className="text-textColor font-semibold lg:text-base text-sm md:text-lg">
-                  Easy Mexican Rice
+                  Hoppin John Rice
                 </p>
                 {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
                 <div className="flex items-center gap-8">
                   <p className="lg:text-lg text-sm text-headingColor font-semibold">
-                    <span className="text-sm text-red-500">$</span> 5.25
+                    <span className="text-sm text-red-500">$</span> 2.25
                   </p>
                 </div>
               </div>
@@ -166,8 +163,8 @@ const CurryContainer = () => {
               <div className="w-full flex items-center justify-between">
                 <motion.img
                   whileHover={{ scale: 1.2 }}
-                  src={RedChi}
-                  alt="red-rice"
+                  src={Loc}
+                  alt="loco-moco-rice"
                   className="w-[45%] -mt-8 drop-shadow-2xl"
                 />
                 <motion.div
@@ -179,12 +176,12 @@ const CurryContainer = () => {
               </div>
               <div className="w-full mt-3 lg:mt-0 flex flex-col gap-4 items-end justify-end">
                 <p className="text-textColor font-semibold lg:text-base text-sm md:text-lg">
-                  Nigerian Jollof Rice
+                  Loco Moco Rice
                 </p>
                 {/* <p className="mt-1 text-sm text-gray-500">45 Calories</p> */}
                 <div className="flex items-center gap-8">
                   <p className="lg:text-lg text-sm text-headingColor font-semibold">
-                    <span className="text-sm text-red-500">$</span> 5.25
+                    <span className="text-sm text-red-500">$</span> 5.15
                   </p>
                 </div>
               </div>
@@ -196,4 +193,4 @@ const CurryContainer = () => {
   );
 };
 
-export default CurryContainer;
+export default RiceContainer;
